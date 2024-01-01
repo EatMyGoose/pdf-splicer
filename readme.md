@@ -12,7 +12,7 @@ Select any number of PDF files & combine them into a single PDF file.
 
 The order of the PDFs can be edited via the up & down arrows within the ***File List*** menu.
 
-![image](./docs/combine-preview.PNG)
+![image](./docs/combine-preview.png)
 
 ### Extract Pages
 Extract specific pages within a PDF file and save it as a new PDF file.
@@ -27,7 +27,7 @@ Page ranges can also be specified using dashes.
 Page ranges & individual  pages may used together in a single filter
 - i.e. `1,2,3,10-11`
 
-![image](./docs/extract-preview.PNG)
+![image](./docs/extract-preview.png)
 
 ## Credits
 
