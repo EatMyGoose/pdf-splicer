@@ -1,0 +1,13 @@
+.alert_container
+{
+    background-color: rgb(251, 132, 44);
+    width: 100%;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+.alert_container>p
+{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}

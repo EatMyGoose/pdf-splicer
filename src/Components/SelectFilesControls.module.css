@@ -1,0 +1,22 @@
+
+.no_files_display{
+    composes: drop_shadow from "../util.module.css";
+    height: 3em;
+    margin-top: 0.5em;
+    border-radius: 3px;
+}
+
+.select_file_container{
+    composes: drop_shadow from "../util.module.css";
+    padding:0;
+}
+
+.file_selector{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+.file_row_radius{
+    border-radius: 5px;
+}
+

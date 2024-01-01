@@ -1,0 +1,30 @@
+.header_bar{
+    height: 2.5em;
+}
+
+.v_centre_children{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.title_image{
+    height: 2em;
+    border-radius: 0.3em;
+    border: solid 1px rgba(255,255,255, 0.25);
+    margin-right: 0.3em;
+}
+
+.rotating_3d{
+    animation: rotating_3d 5s ease-in-out infinite;
+}
+
+@keyframes rotating_3d{
+    from { 
+        transform: rotate3d(0,1,0.05, 0deg) 
+    }
+
+    to { 
+        transform: rotate3d(0,1,0.05, 359deg) 
+    } 
+}

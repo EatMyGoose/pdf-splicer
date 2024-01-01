@@ -1,0 +1,17 @@
+.preview_object{
+    composes: drop_shadow from "../util.module.css";
+    display: block;
+    width: 100%;
+    height: 60vh;
+    transition: height 1s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.preview_object.small{
+    height: 30vh;
+}
+
+.preview_object.large{
+    height: 90vh;
+}

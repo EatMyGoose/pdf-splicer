@@ -1,0 +1,27 @@
+
+@value c-text: #F2F2F1;
+@value c-primary: #E3A7AE;
+@value c-primary-dark: #DD88C2;
+@value c-bg-light: #84A0D5;
+@value c-bg: #385EB8;
+
+.text {
+    color: c-text;
+}
+
+.primary{
+    background-color: c-primary;
+}
+
+.primaryDark{
+    background-color: c-primary-dark;
+}
+
+.bgLight {
+    background-color: c-bg-light;
+}
+
+.bg {
+    background-color: c-bg;
+}
+

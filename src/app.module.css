@@ -1,0 +1,28 @@
+
+.fullWidthApp {
+    composes: bgLight from "./color.module.css";
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.app_body{
+    height: 100%;
+    display: flex !important;
+    min-height:70vh;
+}
+
+.sidebar{
+    width:0px;
+    overflow: hidden;
+    transition: width 0.5s;
+    composes: bg from "./color.module.css";
+}
+
+.sidebar.show{
+    width: 14em !important;
+}
+
+.sidebar>button{
+    width: 100%
+}

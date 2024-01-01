@@ -1,0 +1,31 @@
+.row_container
+{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+    padding-left: 0.5em;
+}
+
+.row_container>div
+{
+    vertical-align: middle;
+}
+
+.button_container > button
+{
+    margin: 0;
+    padding: 0.5em 1em;
+    vertical-align:middle;
+    line-height: 0;
+}
+
+.no_left_radius{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.no_right_radius{
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
