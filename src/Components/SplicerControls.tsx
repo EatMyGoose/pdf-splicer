@@ -23,7 +23,7 @@ export function SplicerControls(props: ISplicerControls)
 {
     const preview = (
         props.downloadURL? 
-        (<iframe className={`${util.full_width} ${styles.preview}`} src={props.downloadURL}></iframe>):
+        (<iframe className={cx(util.full_width, styles.preview, util.hide_xs)} src={props.downloadURL}></iframe>):
         undefined
     )
 
@@ -51,6 +51,7 @@ export function SplicerControls(props: ISplicerControls)
                 fileList={props.fileList}
                 onClearAll={props.onClearAll}
                 className={util.bottom_margin}
+                
             />
 
             <div className={cx(util.collapsible, filesSelected? util.show :"")}>

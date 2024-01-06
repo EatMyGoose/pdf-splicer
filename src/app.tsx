@@ -9,6 +9,8 @@ import { TTab } from "./types";
 import { AppTabBody } from "./Components/AppTabBody";
 import { useFileCombineState } from "./Hooks/useFileCombineState";
 import { usePageExtractorState } from "./Hooks/usePageExtractorState";
+import { cx } from "./util";
+import { SwitchTabControls } from "./Components/SwitchTabButtons";
 
 export function App() {
   const [activeTab, setActiveTab] = useState<TTab>("merge");
@@ -21,17 +23,18 @@ export function App() {
 
   return (
     <div className={styles.fullWidthApp}>
-      <AppHeader/>
+      <AppHeader 
+        setActiveTab={setActiveTab}
+      />
       <div className={`card ${util.container}`}>      
         <div className={`${styles.app_body}`}>
 
-          <div className={`${styles.sidebar} ${styles.show} ${util.inner_pad}`}>
-            <button onClick={() => setActiveTab("merge")}>
-              Combine Files
-            </button>
-            <button onClick={() => setActiveTab("extract")}>
-              Extract Pages
-            </button>
+          <div className={cx(styles.sidebar, styles.show, util.inner_pad, util.hide_xs)}>
+            <SwitchTabControls
+              mergeText="Combine Files"
+              extractText="Extract Pages"
+              setActiveTab={setActiveTab}
+            />
           </div>
           <div className={`${util.inner_pad} ${util.full_width}`}>
             <AppTabBody

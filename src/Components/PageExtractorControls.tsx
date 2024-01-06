@@ -78,28 +78,27 @@ export function PageExtractorControls(props: IPageExtractorControls)
             <h3 className={util.tab_header}>Extract Pages</h3>
         
             <div className={cx(util.left_vert_bar, util.bottom_margin)}>
-                <div className={cx(util.flex_divider)}>
-                    <div className={util.divider_child_2}>
-                        <p className={cx(util.p_vert_center_container)}>
-                            <span><strong>Filename:</strong> {props.extractSrc?.filename}</span>
-                        </p>
+                <div className={cx(util.flex_divider, util.mobile_stack)}>
+                    <div className={cx(util.divider_child_2, styles.filename)}>
+                        <span><strong>Filename:</strong> {props.extractSrc?.filename}</span>
                     </div>
                     
                     <div className={util.divider_child}>
-                        <p className={util.p_vert_center_container}>
-                            <span>
-                                <strong>Size: </strong>
-                                <select 
-                                    style={{width:"6em"}} 
-                                    value={props.previewSize}
-                                    onChange={onSizeChanged}
-                                >
-                                    {previewSizes.map(([name, _], idx) => {
-                                        return <option key={idx} value={name}>{name}</option>
-                                    })}
-                                </select>
-                            </span>
-                        </p>
+                        <div className={cx(util.flex_divider, util.left_just_children)}>
+                            
+                            <strong>Size:</strong>
+                            <select 
+                                style={{width:"6em"}} 
+                                value={props.previewSize}
+                                onChange={onSizeChanged}
+                                className={cx(styles.left_margin)}
+                            >
+                                {previewSizes.map(([name, _], idx) => {
+                                    return <option key={idx} value={name}>{name}</option>
+                                })}
+                            </select>
+                            
+                        </div>
                     </div>
 
                     <FileSelector
@@ -113,11 +112,26 @@ export function PageExtractorControls(props: IPageExtractorControls)
                 </div>
             </div>
 
-            <PDFPreview 
-                src={props.extractSrc?.url}
-                className={cx(styles.preview_object, previewSizeMap.get(props.previewSize) || "", util.bottom_margin)}
-                onPdfFileSelected={props.setSplitTarget}
-            />
+            <div className={util.hide_xs}>
+                <PDFPreview 
+                    src={props.extractSrc?.url}
+                    className={cx(styles.preview_object, previewSizeMap.get(props.previewSize) || "", util.bottom_margin)}
+                    onPdfFileSelected={props.setSplitTarget}
+                />
+            </div>
+            <div className={util.show_xs}>
+                <div className={cx("card", util.drop_shadow, styles.mobile_pdf_preview)}>
+                    {(
+                        (props.extractSrc)?
+                            (<>
+                                <a href={props.extractSrc.url}>{props.extractSrc.filename}</a>
+                                <p>Pages: {props.nPages}</p>
+                            </>):
+                            <h4>No File Selected</h4>
+                    )}
+                </div>
+            </div>
+
 
             <form 
                 disabled={noFileSelected} 

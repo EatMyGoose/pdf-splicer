@@ -1,3 +1,5 @@
+@value mobile_breakpoint from "../util.module.css";
+
 .row_container
 {
     display: flex;
@@ -12,12 +14,25 @@
     vertical-align: middle;
 }
 
+.truncated_text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media (max-width: mobile_breakpoint){
+        max-width: 220px;
+    }
+}
+
 .button_container > button
 {
     margin: 0;
     padding: 0.5em 1em;
     vertical-align:middle;
     line-height: 0;
+
+    @media (max-width:mobile_breakpoint){
+        padding: 0.5em 0.7em;
+    }
 }
 
 .no_left_radius{

@@ -64,6 +64,21 @@ export function SelectFilesControls(props: ISelectFilesControls)
         </div>
     )
 
+    const fileList = props.fileList.map((f, idx) => {
+        return (
+            <li key={idx} className={cx(util.drop_shadow, styles.file_row_radius)}>
+                <FileListItem
+                    index={idx}
+                    fileName={f.name}
+                    isFirst={idx === 0}
+                    isLast={idx === props.fileList.length - 1}
+                    onChangePosition={(idx, offset)=> props.onFileListChanged(makeShiftFileReducer(idx, offset))}
+                    onDelete={(idx)=> props.onFileListChanged(makeDeleteFileReducer(idx))}
+                />
+            </li>
+        )
+    });
+
     return (
         <div className={props.className || ""}>
             <div className={cx(util.left_vert_bar, util.bottom_margin)}>
@@ -79,7 +94,10 @@ export function SelectFilesControls(props: ISelectFilesControls)
                     <div className={cx(util.full_width, styles.file_selector)}>
                         <p>Select Files</p>
                     </div>                    
-                    <div style={{backgroundColor: "white", height:"5em", color:"black"}}>
+                    <div 
+                        className={util.hide_xs}
+                        style={{backgroundColor: "white", height:"5em", color:"black"}}
+                    >
                         <FileDropArea 
                             className={cx(util.p_vert_horz_centering_container)}
                             onPdfFileSelected={(pdfFiles) => handleFileAdded(pdfFiles)}
@@ -95,31 +113,29 @@ export function SelectFilesControls(props: ISelectFilesControls)
                     <h4 class="half" style={{paddingBottom:"0"}}>File List</h4>
         
                     <button 
-                        class="off-fourth"
+                        class="off-fourth fourth"
                         onClick={handleClearAll}
-                        style={{paddingBottom:"0", paddingTop:"0"}}
+                        style={{paddingBottom:"2px", paddingTop:"2px"}}
                     >
-                        Clear All
+                        <span className={cx(util.hide_xs)}>Clear All</span>
+                        <span className={cx(util.show_xs)}>Clear</span>
                     </button>
                 </div>
 
                 {noFileSelected}
-                <ol style={{marginBottom:"0"}}>
-                    {props.fileList.map((f, idx) => {
-                        return (
-                            <li key={idx} className={cx(util.drop_shadow, styles.file_row_radius)}>
-                                <FileListItem
-                                    index={idx}
-                                    fileName={f.name}
-                                    isFirst={idx === 0}
-                                    isLast={idx === props.fileList.length - 1}
-                                    onChangePosition={(idx, offset)=> props.onFileListChanged(makeShiftFileReducer(idx, offset))}
-                                    onDelete={(idx)=> props.onFileListChanged(makeDeleteFileReducer(idx))}
-                                />
-                            </li>
-                        )
-                    })}
-                </ol>
+
+                <div className={util.hide_xs}>
+                    <ol 
+                        style={{marginBottom:"0"}} 
+                    >
+                        {fileList}
+                    </ol>
+                </div>
+                <div className={util.show_xs}>
+                    <ul className={styles.mobile_list}>
+                        {fileList}
+                    </ul>
+                </div>
             </div>
         </div>
     )

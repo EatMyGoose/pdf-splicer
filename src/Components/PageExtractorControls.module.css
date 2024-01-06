@@ -15,3 +15,32 @@
 .preview_object.large{
     height: 90vh;
 }
+
+.filename{
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.left_margin{
+    margin: 0.3em;
+}
+
+.mobile_pdf_preview{
+    height: 5em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    *{
+        margin: 0px 0px !important;
+        padding: 0.2em 0.2em !important;
+    }
+
+    a {
+      max-width: 15em;
+      text-overflow: ellipsis;  
+      overflow: hidden;
+      white-space: nowrap;
+    }
+}

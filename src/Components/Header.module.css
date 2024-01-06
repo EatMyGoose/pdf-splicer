@@ -28,3 +28,15 @@
         transform: rotate3d(0,1,0.05, 359deg) 
     } 
 }
+
+.spread_nav{
+    justify-content: space-between;   
+}
+
+.nav_div > button{
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+}

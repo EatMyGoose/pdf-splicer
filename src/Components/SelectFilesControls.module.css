@@ -20,3 +20,8 @@
     border-radius: 5px;
 }
 
+.mobile_list{
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}

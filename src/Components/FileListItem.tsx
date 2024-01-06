@@ -20,7 +20,7 @@ export function FileListItem(props: IFileListItem)
     return (
         <div className={styles.row_container}>
             <div>
-                <p>{props.fileName}</p>
+                <p className={styles.truncated_text}>{props.fileName}</p>
             </div>
 
             <div className={styles.button_container}>
