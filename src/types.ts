@@ -8,3 +8,8 @@ export interface IFileUrl
     filename: TFilename,
     url: TUrl,
 }
+
+export function IsTTab(value: string)
+{
+    return value == "merge" || value == "extract";
+}
