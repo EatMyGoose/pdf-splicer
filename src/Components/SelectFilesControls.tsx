@@ -90,6 +90,7 @@ export function SelectFilesControls(props: ISelectFilesControls)
                     onFileChanged={handleFileAdded}
                     className={cx(util.full_width, styles.select_file_container)}
                     multiple={true}
+                    id="merge-file-select"
                 >
                     <div className={cx(util.full_width, styles.file_selector)}>
                         <p>Select Files</p>
@@ -116,6 +117,7 @@ export function SelectFilesControls(props: ISelectFilesControls)
                         class="off-fourth fourth"
                         onClick={handleClearAll}
                         style={{paddingBottom:"2px", paddingTop:"2px"}}
+                        id="btn-merge-clear"
                     >
                         <span className={cx(util.hide_xs)}>Clear All</span>
                         <span className={cx(util.show_xs)}>Clear</span>

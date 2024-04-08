@@ -11,6 +11,7 @@ interface IFileSelector
     children: JSX.Element | JSX.Element[] | string,
     busy?: boolean
     className?: string 
+    id?: string
 }
 
 export function FileSelector(props: IFileSelector)
@@ -45,6 +46,7 @@ export function FileSelector(props: IFileSelector)
                 accept=".pdf"
                 multiple={props.multiple}
                 onChange={onFileSelected}
+                id={props.id}
             />
             {props.busy? 
                 <Spinner/> :

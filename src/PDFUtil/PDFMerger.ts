@@ -7,7 +7,7 @@ export class PDFMerger
         const loadedPDFs_future = files.map(file => 
             file
                 .arrayBuffer()
-                .then(buffer => PDFDocument.load(buffer))
+                .then(buffer => PDFDocument.load(buffer, { ignoreEncryption: true }))
         );
         
         const loadedPDFs = await Promise.all(loadedPDFs_future);

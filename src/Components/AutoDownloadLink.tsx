@@ -11,6 +11,7 @@ export interface IAutoDownloadLink
     autoDownload: boolean;
 
     className? : string
+    id?: string
 }
 
 export function AutoDownloadLink(props: IAutoDownloadLink)
@@ -34,7 +35,10 @@ export function AutoDownloadLink(props: IAutoDownloadLink)
     , [props.url, props.autoDownload])
 
     return (
-        <div className={util.p_vert_horz_centering_container}>
+        <div 
+            className={util.p_vert_horz_centering_container}
+            id={props.id}
+        >
             <a 
                 className={`${props.className || ""}`}
                 ref={anchorRef}

@@ -11,10 +11,16 @@ export function SwitchTabControls(props: ISwitchTabControls)
 {
     return (
         <>
-            <button onClick={() => props.setActiveTab("merge")}>
+            <button 
+                onClick={() => props.setActiveTab("merge")}
+                id="btn-sidebar-merge"
+            >
                 {props.mergeText}
             </button>
-            <button onClick={() => props.setActiveTab("extract")}>
+            <button 
+                onClick={() => props.setActiveTab("extract")}
+                id="btn-sidebar-extract"
+            >
                 {props.extractText}
             </button>
         </>

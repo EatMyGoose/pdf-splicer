@@ -9,7 +9,7 @@ export class PDFPageExtractor
         const doc = await (
             file
                 .arrayBuffer()
-                .then(buffer => PDFDocument.load(buffer))
+                .then(buffer => PDFDocument.load(buffer, { ignoreEncryption: true }))
         );
 
         return doc;

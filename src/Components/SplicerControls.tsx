@@ -36,6 +36,7 @@ export function SplicerControls(props: ISplicerControls)
             className={`${util.p_centered}`}
             onFileDownload={props.onMergedFileDownload}
             autoDownload={props.downloadMergedFile}
+            id="a-merge-download"
         />
         :
         undefined
@@ -51,7 +52,6 @@ export function SplicerControls(props: ISplicerControls)
                 fileList={props.fileList}
                 onClearAll={props.onClearAll}
                 className={util.bottom_margin}
-                
             />
 
             <div className={cx(util.collapsible, filesSelected? util.show :"")}>
@@ -60,6 +60,7 @@ export function SplicerControls(props: ISplicerControls)
                         disabled={props.mergeInProgress}
                         onClick={props.onBeginPDFMerge}
                         className={`${util.full_width}`}
+                        id="btn-merge-pdf"
                     >
                         <Loadable loading={props.mergeInProgress}>
                             Merge PDF Files

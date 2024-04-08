@@ -67,6 +67,7 @@ export function PageExtractorControls(props: IPageExtractorControls)
             innerText="Download Extracted Pages"
             onFileDownload={props.onSplitFileDownload}
             autoDownload={props.downloadSplitFile}
+            id={"split-download-link"}
         />
         :undefined
     );
@@ -106,6 +107,7 @@ export function PageExtractorControls(props: IPageExtractorControls)
                         busy={props.loading}
                         onFileChanged={onFileSelected}
                         className={cx(util.divider_child)}
+                        id="extract-select-file"
                     >
                         {noFileSelected? "Load File": "Change File"}
                     </FileSelector>
@@ -140,6 +142,7 @@ export function PageExtractorControls(props: IPageExtractorControls)
             >
                 <label htmlFor=""><h4>Page Filter</h4></label>
                 <textarea 
+                    id="split-pagerange-textarea"
                     value={props.filter}
                     onInput={(e) => props.setFilter((e.target as HTMLTextAreaElement).value)}
                     rows={3}
@@ -152,6 +155,7 @@ export function PageExtractorControls(props: IPageExtractorControls)
                     hidden={parseResult.success}
                 />
                 <button
+                    id="split-begin-split"
                     disabled={hasParseError}
                     onClick={() => props.onBeginPageExtract(parseResult.pageIndices)}
                     className={util.full_width}
